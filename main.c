@@ -11,6 +11,7 @@ int  main(int argc __attribute__((unused)), char *argv[])
 	char *line = NULL;
 	char *lineCopy = NULL;
 
+	betty();
 	while ((isatty(STDIN_FILENO) != 0))
 	{
 		write(STDOUT_FILENO, "$ ", 2);
