@@ -2,13 +2,14 @@
 
 /**
  * exec - execute the currebt running program from the child instance
- * @args:  program arguments
+ * @argv:  program arguments
  * Return: Nothing on success
  */
 void exec(char *argv[])
 {
 	int status;
 	pid_t childPid;
+
 	childPid = fork();
 
 	if (childPid == 0)

@@ -1,16 +1,18 @@
 #include "main.h"
 
 /**
- * splitLine - separate input 
+ * splitLine - separate input
  * @line: input
+ * @lineCopy: input copy
  * Return: splitted input
  */
-char** splitLine(char* line, char* lineCopy)
+char **splitLine(char *line, char *lineCopy)
 {
 	int count, i;
-	char* token;
-	char* argv[100];
-	char** av;
+	char *token;
+	char *argv[100];
+	char **av;
+
 	count = 0;
 	token = strtok(line, " /t/n/r");
 	while (token != NULL && count < 63)
@@ -24,10 +26,10 @@ char** splitLine(char* line, char* lineCopy)
 		perror("Memory allocation Error");
 		exit(EXIT_FAILURE);
 	}
-	
+
 	lineCopy = strdup(line);
 	token = strtok(lineCopy, " /t/n/r");
-	for (i = 0; i < count; i++ )
+	for (i = 0; i < count; i++)
 	{
 		argv[i] = strdup(token);
 		token = strtok(NULL, " /t/n/r");

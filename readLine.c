@@ -4,10 +4,10 @@
  * readLine - read what is input on the terminal by the user
  * Return: what was read
  */
-char* readLine()
+char *readLine(void)
 {
-	char* line;
-	char* lineCopy;
+	char *line;
+	char *lineCopy;
 	size_t lineLen;
 	ssize_t read;
 
@@ -24,13 +24,13 @@ char* readLine()
 		exit(EXIT_FAILURE);
 	}
 
-	lineCopy = (char*)malloc(sizeof(char) * read + 1);
+	lineCopy = (char *)malloc(sizeof(char) * read + 1);
 	if (lineCopy == NULL)
 	{
 		perror("Memory allocation error");
 	}
 	strcpy(lineCopy, line);
 	free(line);
-	free (lineCopy);
+	free(lineCopy);
 	return (line);
 }

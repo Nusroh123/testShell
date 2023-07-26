@@ -2,12 +2,14 @@
 
 /**
  * main - main entry
+ * @argc: argument count
+ * @argv: argument variable
  * Return: 0 on success
  */
-int  main(int argc __attribute__((unused)), char* argv[])
+int  main(int argc __attribute__((unused)), char *argv[])
 {
-	char* line = NULL;
-	char* lineCopy = NULL;
+	char *line = NULL;
+	char *lineCopy = NULL;
 
 	while ((isatty(STDIN_FILENO) != 0))
 	{
@@ -20,5 +22,4 @@ int  main(int argc __attribute__((unused)), char* argv[])
 	free(line);
 	line = NULL;
 	return (0);
-	
 }
