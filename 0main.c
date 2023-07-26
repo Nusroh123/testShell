@@ -4,9 +4,9 @@
  * main - entry point
  * Return: 0 on success
  */
-int main()
+int main(void)
 {
 	betty();
 
 	return (0);
-} 
+}
