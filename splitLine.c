@@ -9,7 +9,7 @@ char** splitLine(char* line, char* lineCopy)
 {
 	int count, i;
 	char* token;
-	char* argv[64];
+	char* argv[100];
 	char** av;
 	count = 0;
 	token = strtok(line, " /t/n/r");
@@ -19,7 +19,7 @@ char** splitLine(char* line, char* lineCopy)
 		count++;
 	}
 
-	if (argv == NULL)
+	if (argv[0] == NULL)
 	{
 		perror("Memory allocation Error");
 		exit(EXIT_FAILURE);

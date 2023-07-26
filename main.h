@@ -12,6 +12,6 @@
 int betty(void);
 char *readLine();
 char **splitLine(char *line, char *lineCopy);
-void exec(void);
+void exec(char *argv[]);
 
 #endif

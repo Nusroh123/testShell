@@ -4,7 +4,7 @@
  * main - main entry
  * Return: 0 on success
  */
-int  main(int argc __attribute__((unused)), char* args[] __attribute__((unused)))
+int  main(int argc __attribute__((unused)), char* argv[])
 {
 	char* line = NULL;
 	char* lineCopy = NULL;
@@ -14,7 +14,7 @@ int  main(int argc __attribute__((unused)), char* args[] __attribute__((unused))
 		write(STDOUT_FILENO, "$ ", 2);
 		line = readLine();
 		splitLine(line, lineCopy);
-		exec();
+		exec(argv);
 	}
 
 	free(line);

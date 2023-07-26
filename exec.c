@@ -5,16 +5,15 @@
  * @args:  program arguments
  * Return: Nothing on success
  */
-void exec(void)
+void exec(char *argv[])
 {
 	int status;
 	pid_t childPid;
-	char *argv[] = {" ", NULL};
-	execve(argv[0], argv, NULL);
 	childPid = fork();
 
 	if (childPid == 0)
 	{
+		execve(argv[0], argv, NULL);
 		if (execve(argv[0], argv, NULL) == -1)
 		{
 			perror("Not a command");
