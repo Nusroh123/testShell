@@ -10,8 +10,6 @@
 #include <sys/stat.h>
 
 int betty(void);
-char *readLine();
-char **splitLine(char *line, char *lineCopy);
-void exec(char *argv[]);
+int shell(void);
 
 #endif

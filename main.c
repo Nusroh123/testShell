@@ -6,21 +6,10 @@
  * @argv: argument variable
  * Return: 0 on success
  */
-int  main(int argc __attribute__((unused)), char *argv[])
+int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 {
-	char *line = NULL;
-	char *lineCopy = NULL;
-
 	betty();
-	while ((isatty(STDIN_FILENO) != 0))
-	{
-		write(STDOUT_FILENO, "$ ", 2);
-		line = readLine();
-		splitLine(line, lineCopy);
-		exec(argv);
-	}
+	shell();
 
-	free(line);
-	line = NULL;
 	return (0);
 }
