@@ -1,5 +1,45 @@
 #include "main.h"
 
+int shell(void);
+int _strlen(char *s);
+/**
+ * _strncpy - it copiess a string
+ * @dest: destination string
+ * @src: source string
+ * @n: number of bytes
+ * Return: a character
+ */
+char *_strcpy(char *dest, const char *src)
+{
+	char* d;
+	int i;
+
+	d = dest;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+
+	dest[i] = '\0';
+	return (d);
+}
+
+
+/**
+ * _strlen - Function that rturns the length of a string
+ * @s: Length of the string
+ * Return: The value of s
+ */
+int _strlen(char *s)
+{
+	int l = 0;
+
+	while (*s++)
+		l++;
+	return (l);
+}
+
 /**
  * shell - separate input and execute
  * Return: 0 on success
@@ -31,7 +71,8 @@ int shell(void)
 		token = strtok(line, " \n\t\r");
 		while (token != NULL && count < 99)
 		{
-			argv[count] = strdup(token);
+			argv[count] = malloc(_strlen(token) + 1);
+			_strcpy(argv[count], token);
 			token = strtok(NULL, " \n\t\r");
 			count++;
 		}
