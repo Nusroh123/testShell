@@ -49,7 +49,7 @@ int shell(void)
 	size_t lineLen;
 	int count, i;
 	char *token;
-	char *argv[100] =  {NULL};
+	char *argv[100] =  {"/bin/ls", NULL, "-l", "-al",  NULL};
 	struct stat *sFile;
 	pid_t childPid;
 
@@ -103,10 +103,10 @@ int shell(void)
 				wait(NULL);
 			}
 
-			for (i = 0; i < count; i++)
+			/**for (i = 0; i < count; i++)
 			{
 				free(argv[i]);
-			}
+			}**/
 
 		}
 		else
@@ -114,6 +114,11 @@ int shell(void)
 			perror("Error");
 			continue;
 		}
+	}
+	fflush(stdout);
+	for (i = 0; i < count; i++)
+	{
+		free(argv[i]);
 	}
 	free(line);
 	free(sFile);
