@@ -11,5 +11,8 @@
 
 int betty(void);
 int shell(void);
-
+void nonIShell(int argc, char *argv[] __attribute__((unused)));
+void processIS(char *line);
+int _strlen(char *s);
+char *_strcpy(char *dest, const char *src);
 #endif

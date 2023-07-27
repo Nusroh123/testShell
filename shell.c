@@ -3,15 +3,14 @@
 int shell(void);
 int _strlen(char *s);
 /**
- * _strncpy - it copiess a string
+ * _strcpy - it copiess a string
  * @dest: destination string
  * @src: source string
- * @n: number of bytes
  * Return: a character
  */
 char *_strcpy(char *dest, const char *src)
 {
-	char* d;
+	char *d;
 	int i;
 
 	d = dest;
