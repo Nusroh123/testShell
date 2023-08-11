@@ -9,6 +9,7 @@
 #include <string.h>
 #include <sys/stat.h>
 
+extern char **environ;
 int betty(void);
 int shell(void);
 void nonIShell(int argc, char *argv[] __attribute__((unused)));
